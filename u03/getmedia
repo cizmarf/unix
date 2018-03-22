@@ -6,12 +6,12 @@ if [ $1 = "--help" ]; then
 	echo "-s for sound";
 else 
 	if [ $1 = "-i" ]; then
-		egrep -o 'https?://[a-z0-9]+(\.[a-z0-9]+){1,}(/[-0-Za-z\.~\+_]+)*\.(jpg|svg|png)' "$2";
+		egrep -o '(\/)?(https?:\/\/[a-z0-9]+(\.[a-z0-9]+){1,})?([-0-Za-z\.~\+_]+)?(/[-0-Za-z\.~\+_]+)*\.(jpg|svg|png)' "$2";
 	else 
 		if [ $1 = "-s" ]; then
-			egrep -o 'https?://[a-z0-9]+(\.[a-z0-9]+){1,}(/[-0-Za-z\.~\+_]+)*\.(wav|mp3|ogg)' "$2";
+			egrep -o '(\/)?(https?:\/\/[a-z0-9]+(\.[a-z0-9]+){1,})?([-0-Za-z\.~\+_]+)?(\/[-0-Za-z\.~\+_]+)*\.(wav|mp3|ogg)' "$2";
 		else
-			egrep -o 'https?://[a-z0-9]+(\.[a-z0-9]+){1,}(/[-0-Za-z\.~\+_]+)*\.(wav|mp3|ogg|jpg|svg|png)' "$1";
+			egrep -o '(\/)?(https?:\/\/[a-z0-9]+(\.[a-z0-9]+){1,})?([-0-Za-z\.~\+_]+)?(\/[-0-Za-z\.~\+_]+)*\.(wav|mp3|ogg|jpg|svg|png)' "$1";
 		fi
 	fi
 fi
