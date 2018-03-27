@@ -1,0 +1,1 @@
+./colnumbers.sh data5.csv | egrep 'Weight' | egrep -o '[:space:]*[0-9]+'
